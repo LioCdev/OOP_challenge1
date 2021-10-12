@@ -1,23 +1,19 @@
 <?php
 
-class Car 
-{
+require_once 'Vehicle.php';
 
-    private int $nbWheels = 4;
-    private int $currentSpeed;
-    private string $color;
-    private int $nbSeats;
-    private string $energy;
-    private int $energyLevel;
+class Car extends Vehicle
+{
+    protected string $energy;
+    protected int $energyLevel;
 
     public function __construct(string $color, int $nbSeats, string $energy)
     {
-        $this->color = $color;
-        $this->nbSeats = $nbSeats;
-        $this->energy = $energy;
+        parent:: __construct($color,$nbSeats);
+        $this->setEnergy($energy);
     }
 
-    public function start(): string {
+    /*public function start(): string {
         $this->currentSpeed = 0;
         return "Let's Go ! ";
     }
@@ -40,23 +36,7 @@ class Car
         }
         $sentence .= "I'm stopped ! ";
         return $sentence;
-    }
-
-    public function getNbWheels():int {
-        return $this->nbWheels;
-    }
-
-    public function getCurrentSpeed():string {
-        return "Speed is " . $this->currentSpeed ." km/h." . PHP_EOL;
-    }
-
-    public function getColor():string {
-        return $this->Color;
-    }
-
-    public function getNbSeats():int {
-        return $this->nbSeats;
-    }
+    }*/
 
     public function getEnergy():string {
         return $this->energy;
