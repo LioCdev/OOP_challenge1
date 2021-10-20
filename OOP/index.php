@@ -2,6 +2,7 @@
 require 'Bicycle.php';
 require 'Car.php';
 require 'Truck.php';
+require 'MotorWay.php';
 
 /*$bike = new Bicycle('red', 1);
 var_dump($bike);
@@ -49,3 +50,10 @@ echo $truck->full() . '<br>';
 echo $truck->setLoading(100) . '<br>';
 echo $truck->getLoading() . '<br>';
 echo $truck->full() . '<br>';
+
+$motorWay1 = new MotorWay();
+$motorWay1->addVehicle($car);
+$motorWay1->addVehicle($bicycle);
+
+var_dump($motorWay1);
+
